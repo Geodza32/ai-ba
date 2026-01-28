@@ -54,8 +54,8 @@ export function Cases() {
                                 key={cat.value}
                                 onClick={() => setActiveTab(cat.value)}
                                 className={`px-4 py-2 text-[10px] md:text-xs font-mono uppercase tracking-widest transition-all duration-300 rounded-sm border ${activeTab === cat.value
-                                        ? 'bg-white text-black border-white'
-                                        : 'text-zinc-500 border-zinc-800 hover:border-zinc-500 hover:text-zinc-300'
+                                    ? 'bg-white text-black border-white'
+                                    : 'text-zinc-500 border-zinc-800 hover:border-zinc-500 hover:text-zinc-300'
                                     }`}
                             >
                                 {cat.label}
@@ -142,8 +142,6 @@ export function Cases() {
                                         className="w-full h-full"
                                         frameBorder="0"
                                         allow="clipboard-write; autoplay"
-                                        webkitallowfullscreen
-                                        mozallowfullscreen
                                         allowFullScreen
                                     ></iframe>
                                 ) : (
