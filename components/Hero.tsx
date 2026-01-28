@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Typewriter } from './Typewriter';
 
+import Image from 'next/image';
+
 export function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollY } = useScroll();
@@ -22,11 +24,12 @@ export function Hero() {
                 className="absolute right-0 top-0 h-full w-full md:w-[60%] pointer-events-none select-none z-0"
             >
                 <div className="relative w-full h-full">
-                    {/* The Image: Grayscale + Masked + Even Brighter */}
-                    <img
+                    <Image
                         src="/george.jpg"
-                        alt=""
-                        className="w-full h-full object-contain object-right grayscale opacity-75 md:opacity-85 mix-blend-screen brightness-150"
+                        alt="George Dzhachvadze"
+                        fill
+                        priority
+                        className="object-contain object-right grayscale opacity-75 md:opacity-85 mix-blend-screen brightness-150"
                         style={{
                             WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 95%)',
                             maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 95%)'

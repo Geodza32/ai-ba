@@ -3,6 +3,7 @@
 
 import { motion } from 'framer-motion';
 import { Typewriter } from './Typewriter';
+import Image from 'next/image';
 
 const facts = [
     {
@@ -62,7 +63,7 @@ export function Lifestyle() {
                         viewport={{ once: true }}
                         className="lg:col-span-5 aspect-[4/5] relative bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900"
                     >
-                        <img src="/bike.png" alt="Motorcycle life" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+                        <Image src="/bike.png" alt="Motorcycle life" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                         <div className="absolute bottom-8 left-8 text-white z-10">
                             <span className="text-[10px] font-mono uppercase tracking-[0.3em] mb-2 block text-white/50">Passion</span>
@@ -80,8 +81,8 @@ export function Lifestyle() {
                             viewport={{ once: true }}
                             className="flex flex-col gap-6"
                         >
-                            <div className="aspect-video bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900">
-                                <img src="/yoga.png" alt="Yoga practice" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                            <div className="aspect-video relative bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900">
+                                <Image src="/yoga.png" alt="Yoga practice" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                             </div>
                             <div className="flex flex-col gap-2">
                                 <span className="text-[10px] text-zinc-700 font-mono uppercase tracking-widest">{facts[0].tag}</span>
@@ -98,8 +99,8 @@ export function Lifestyle() {
                             transition={{ delay: 0.2 }}
                             className="flex flex-col gap-6"
                         >
-                            <div className="aspect-video bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900">
-                                <img src="/marketing.png" alt="Marketing Presentation" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                            <div className="aspect-video relative bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900">
+                                <Image src="/marketing.png" alt="Marketing Presentation" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                             </div>
                             <div className="flex flex-col gap-2">
                                 <span className="text-[10px] text-zinc-700 font-mono uppercase tracking-widest">{facts[2].tag}</span>
@@ -115,8 +116,8 @@ export function Lifestyle() {
                             viewport={{ once: true }}
                             className="flex flex-col gap-6"
                         >
-                            <div className="aspect-video bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900">
-                                <img src="/tea.png" alt="Tea ceremony" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                            <div className="aspect-video relative bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900">
+                                <Image src="/tea.png" alt="Tea ceremony" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
                             </div>
                             <div className="flex flex-col gap-2">
                                 <span className="text-[10px] text-zinc-700 font-mono uppercase tracking-widest">{facts[4].tag}</span>
@@ -150,27 +151,27 @@ export function Lifestyle() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="aspect-square bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900"
+                        className="aspect-square relative bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900"
                     >
-                        <img src="/expert.png" alt="Dzhachvadze George speaking" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+                        <Image src="/expert.png" alt="Dzhachvadze George speaking" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="aspect-square bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900"
+                        className="aspect-square relative bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900"
                     >
-                        <img src="/personal_1.png" alt="Dzhachvadze George" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+                        <Image src="/personal_1.png" alt="Dzhachvadze George" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="aspect-square bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900"
+                        className="aspect-square relative bg-zinc-950 rounded-sm overflow-hidden border border-zinc-900"
                     >
-                        <img src="/personal_2.png" alt="Dzhachvadze George education" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+                        <Image src="/personal_2.png" alt="Dzhachvadze George education" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
                     </motion.div>
                 </div>
             </div>
