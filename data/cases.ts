@@ -180,30 +180,4 @@ export const cases: Case[] = [
         videoUrl: "https://rutube.ru/play/embed/d2193fcd4750a90e1c2536e53e551229",
         tags: ["LTM", "VectorDB"]
     },
-    {
-        id: '21',
-        title: "Спикер БРИКС+",
-        category: 'marketing',
-        desc: "Доклад о будущем и архитектуре AI в международном бизнесе.",
-        fullDesc: "Почётный спикер на форуме БРИКС+. Представление видения того, как AI-архитектура меняет прибыльность современных компаний.",
-        videoUrl: "https://rutube.ru/play/embed/0abab0fdceaac5374bdb785f80cd131f",
-        tags: ["Speaker", "BRIX+"]
-    },
-    {
-        id: '22',
-        title: "Шоу со Светлаковым (ТНТ)",
-        category: 'marketing',
-        desc: "AI-экспертиза на федеральном ТВ. Обзор профессий будущего.",
-        fullDesc: "Участие в вебинаре и ТВ-шоу со Светлаковым (ТНТ) в качестве эксперта. Разбор того, как нейросети меняют рынок труда в 2024-2025 годах.",
-        videoUrl: "https://rutube.ru/play/embed/e05b25b3572069a1a6cff1b8644c2627",
-        tags: ["TV", "Expert"]
-    },
-    {
-        id: '23',
-        title: "Автор курса Skillbox",
-        category: 'marketing',
-        desc: "Курс по нейросетям и AI-маркетингу для крупнейшей EdTech платформы.",
-        fullDesc: "Разработка и преподавание курса 'Маркетолог 2024' и программ по AI. Кейс работы отмечен в Forbes.",
-        tags: ["Education", "Skillbox"]
-    }
 ];

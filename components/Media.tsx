@@ -57,6 +57,19 @@ const mediaMentions: MediaMention[] = [
             "Трансформация из студента в эксперта",
             "Deep Learning подход в карьере"
         ]
+    },
+    {
+        brand: "Skillbox / Forbes",
+        title: "Автор курса: Нейросети в маркетинге",
+        link: "https://skillbox.ru/media/marketing/story-georgiy-djachvadze-2/",
+        type: "Education",
+        role: "Course Author / Expert",
+        summary: "Разработка авторской программы обучения AI-инструментам для крупнейшей EdTech платформы. Кейс внедрения AI-технологий в реальный бизнес отмечен в Forbes.",
+        metrics: [
+            "Автор флагманского курса",
+            "Кейс отмечен в Forbes",
+            "Обучение 1000+ студентов"
+        ]
     }
 ];
 
