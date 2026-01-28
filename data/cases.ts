@@ -1,6 +1,12 @@
 
 export type Category = 'all' | 'bots' | 'saas' | 'automation' | 'marketing';
 
+export interface MediaItem {
+    type: 'video' | 'image';
+    url: string;
+    label?: string;
+}
+
 export interface Case {
     id: string;
     title: string;
@@ -10,6 +16,7 @@ export interface Case {
     metrics?: string;
     tags: string[];
     videoUrl?: string;
+    media?: MediaItem[];
 }
 
 export const cases: Case[] = [
@@ -61,11 +68,14 @@ export const cases: Case[] = [
     },
     {
         id: '6',
-        title: "BioGenius",
+        title: "BioGenius (ЕГЭ)",
         category: 'saas',
         desc: "ИИ-репетитор для ЕГЭ. Инженерная архитектура, ведущая ученика по шагам.",
         fullDesc: "API-First архитектура. Система ведет по сложным задачам генетики и биологии, не давая списать. Геймификация (XP + Streaks) для ежедневных занятий.",
-        videoUrl: "https://rutube.ru/play/embed/f12682259a31937547bc2ad0b4c448c1?p=ZxG35KxInF2Z1GIIeQapGw",
+        media: [
+            { type: 'video', url: "https://rutube.ru/play/embed/f12682259a31937547bc2ad0b4c448c1?p=ZxG35KxInF2Z1GIIeQapGw", label: "Превью" },
+            { type: 'video', url: "https://rutube.ru/play/embed/4c7c82323ec717a20d90a747b136828e?p=cD1SeIb8wMnahL_aeit3tQ", label: "Платформа" }
+        ],
         tags: ["EdTech", "API-First"]
     },
     {
@@ -105,21 +115,95 @@ export const cases: Case[] = [
         tags: ["OSINT", "Analysis"]
     },
     {
-        id: '11',
-        title: "AI Cinematic Visuals",
-        category: 'marketing',
-        desc: "Кинематографическое качество видео без камер и актеров через нейросети.",
-        fullDesc: "Создание food-porn роликов, Sci-Fi анимаций и реалистичных пейзажей. Видео-продакшн нового поколения для рекламы и промо.",
-        videoUrl: "https://rutube.ru/play/embed/c5dd2cc7ea692f6a626bcaa6a2432c85?p=bPJ67TK28Zlm1bRvIiS4hA",
-        tags: ["Generative Video", "AI Art"]
+        id: '13',
+        title: "ИИ-Астролог «Селена»",
+        category: 'bots',
+        desc: "Математически точные натальные карты и компенсаторика вместо общих гороскопов.",
+        fullDesc: "Профессиональные алгоритмы ProAstro. Запрашивает точное время рождения, строит карту и дает пошаговый план действий по деньгам, отношениям и энергии.",
+        tags: ["Psychology", "Algorithms"]
     },
     {
-        id: '12',
-        title: "ИИ-Юрист Интерцессия",
+        id: '14',
+        title: "CRM-Автоматизация",
+        category: 'automation',
+        desc: "Excel → AI-агент → Готовый отчёт за секунды прямо в Telegram.",
+        fullDesc: "Бот принимает Excel, AI-агент определяет структуру и извлекает данные. В 10+ раз быстрее ручной обработки с точностью 99.9%.",
+        tags: ["Data Engineering", "LLM"]
+    },
+    {
+        id: '15',
+        title: "ИИ-Поддержка «Без долгов»",
         category: 'bots',
-        desc: "Экспертная система для консультаций и анализа документов.",
-        fullDesc: "Бот обучен на практике МГЮА и Интерцессии. Полноценная поддержка по судебным и уголовным делам. Подводит к встрече с живым юристом.",
-        videoUrl: "https://rutube.ru/play/embed/98b854d66b87bcdcc6aece72f61cd57f?p=rvVk8XbKCLx66P-xIOx-Yw",
-        tags: ["Legal AI"]
+        desc: "Анализ эмоций и вежливые ответы. Снижение потерь лидов в юридической практике.",
+        fullDesc: "Анализирует запросы на банкротство, отвечает без давления и передает теплых лидов юристу. Стандартизация тона и 24/7 доступность.",
+        tags: ["Legal", "CRM"]
+    },
+    {
+        id: '16',
+        title: "ИИ-Мониторинг Telegram",
+        category: 'automation',
+        desc: "Сканирование 300+ каналов 24/7. Распознавание контекста и трендов для медиа.",
+        fullDesc: "LLM-фильтр отсекает мусор и находит реальные инфоповоды (аресты, происшествия). Снижение нагрузки на редакцию на 70%.",
+        tags: ["Media", "Real-time"]
+    },
+    {
+        id: '17',
+        title: "Парсер для ремонта (Крд)",
+        category: 'marketing',
+        desc: "10-20 целевых заявок в день через мониторинг чатов в реальном времени.",
+        fullDesc: "Мониторинг ключевых слов в локальных чатах Краснодара. AI-шаблоны ответов позволяют реагировать первыми и забирать заказ.",
+        tags: ["LeadGen", "Automation"]
+    },
+    {
+        id: '18',
+        title: "Парсер для логистики",
+        category: 'marketing',
+        desc: "До 30 горячих лидов в день. Окупаемость инструмента — 2 недели.",
+        fullDesc: "Отслеживание запросов на перевозки и спецтехнику. Помогает менеджерам реагировать на срочные заказы без затрат на рекламу в Яндекс/Авито.",
+        tags: ["Logistics", "Marketing"]
+    },
+    {
+        id: '19',
+        title: "STEALTH: Анти-Инстаграм",
+        category: 'saas',
+        desc: "A/B тесты для реальной жизни. Анонимное голосование и сухая статистика.",
+        fullDesc: "Социальная сеть без имен и лайков вежливости. Честная обратная связь через анонимные опросы. AI-завод контента для вирального роста.",
+        videoUrl: "https://rutube.ru/play/embed/0ddfba88e31dc029285bb45d6569b6b8?p=yt3NcOPKzxfz_OdQ2WnIVw",
+        tags: ["SocialFi", "Innovation"]
+    },
+    {
+        id: '20',
+        title: "AI-Секретарь (RAG)",
+        category: 'bots',
+        desc: "Помощник с долгосрочной памятью о вашей деятельности годами.",
+        fullDesc: "Векторная база знаний запоминает всё, что вы делаете. Выполняет операционные задачи: 'сделай за меня, принеси данные из старых проектов'.",
+        videoUrl: "https://rutube.ru/play/embed/d2193fcd4750a90e1c2536e53e551229",
+        tags: ["LTM", "VectorDB"]
+    },
+    {
+        id: '21',
+        title: "Спикер БРИКС+",
+        category: 'marketing',
+        desc: "Доклад о будущем и архитектуре AI в международном бизнесе.",
+        fullDesc: "Почётный спикер на форуме БРИКС+. Представление видения того, как AI-архитектура меняет прибыльность современных компаний.",
+        videoUrl: "https://rutube.ru/play/embed/0abab0fdceaac5374bdb785f80cd131f",
+        tags: ["Speaker", "BRIX+"]
+    },
+    {
+        id: '22',
+        title: "Шоу со Светлаковым (ТНТ)",
+        category: 'marketing',
+        desc: "AI-экспертиза на федеральном ТВ. Обзор профессий будущего.",
+        fullDesc: "Участие в вебинаре и ТВ-шоу со Светлаковым (ТНТ) в качестве эксперта. Разбор того, как нейросети меняют рынок труда в 2024-2025 годах.",
+        videoUrl: "https://rutube.ru/play/embed/e05b25b3572069a1a6cff1b8644c2627",
+        tags: ["TV", "Expert"]
+    },
+    {
+        id: '23',
+        title: "Автор курса Skillbox",
+        category: 'marketing',
+        desc: "Курс по нейросетям и AI-маркетингу для крупнейшей EdTech платформы.",
+        fullDesc: "Разработка и преподавание курса 'Маркетолог 2024' и программ по AI. Кейс работы отмечен в Forbes.",
+        tags: ["Education", "Skillbox"]
     }
 ];

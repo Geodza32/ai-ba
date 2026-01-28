@@ -6,15 +6,27 @@ import { Typewriter } from './Typewriter';
 
 const marketingCases = [
     {
+        title: "AI Dubbing Global",
+        subtitle: "Глобальная экспансия блогеров",
+        desc: "Клонирование голоса и мимики. Автоматический перевод контента на 10+ языков с полным сохранением интонаций.",
+        metric: "Global Reach"
+    },
+    {
         title: "Wildberries: 0 → 1,000,000₽",
-        subtitle: "Масштабирование магазина за 30 дней",
+        subtitle: "Масштабирование магазина",
         desc: "Построение воронки, работа с остатками и SEO-оптимизация карточек в условиях жесткой конкуренции.",
         metric: "1M+ Revenue"
     },
     {
+        title: "Reels-конвейер",
+        subtitle: "Автоматизация контента",
+        desc: "Создание цифрового двойника эксперта. Поиск виральных сценариев и автопостинг в 6 соцсетей ежедневно.",
+        metric: "1000+ Videos"
+    },
+    {
         title: "CMO Skillbox Offline",
         subtitle: "Директор по маркетингу",
-        desc: "Управление всей маркетинговой стратегией офлайн-направления одного из лидеров EdTech рынка.",
+        desc: "Управление маркетинговой стратегией офлайн-направления. Кейс отмечен в Forbes.",
         metric: "Enterprise Scale"
     }
 ];
@@ -57,62 +69,6 @@ export function Marketing() {
                             </div>
                         </motion.div>
                     ))}
-                </div>
-            </div>
-        </section>
-    );
-}
-
-export function Personality() {
-    return (
-        <section className="w-full bg-black py-24 md:py-32 px-6 md:px-12 flex flex-col items-center">
-            <div className="max-w-[1400px] w-full flex flex-col gap-16 md:gap-24">
-
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-zinc-900 pb-12">
-                    <h2 className="text-4xl md:text-6xl text-white font-semibold leading-[1.2]">
-                        <Typewriter text="ЦЕННОСТИ И ЖИЗНЬ" speed={0.05} />
-                    </h2>
-                    <span className="text-[10px] text-zinc-500 font-mono uppercase tracking-[0.3em] mb-2">
-                        Beyond the Code
-                    </span>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-                    <div className="flex flex-col gap-12">
-                        <div className="flex flex-col gap-4">
-                            <h4 className="text-lg text-white font-mono uppercase tracking-widest">Principles</h4>
-                            <ul className="flex flex-col gap-6">
-                                <li className="flex flex-col gap-2">
-                                    <span className="text-white text-xl">Системы важнее запусков</span>
-                                    <p className="text-zinc-500 text-sm font-light leading-relaxed">Любой результат должен быть повторяемым. Я строю механизмы, а не временные решения.</p>
-                                </li>
-                                <li className="flex flex-col gap-2">
-                                    <span className="text-white text-xl">Скорость — это фича</span>
-                                    <p className="text-zinc-500 text-sm font-light leading-relaxed">В AI-эру выигрывает не самый крупный, а самый быстрый. Мои архитектуры готовы к мгновенным изменениям.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col gap-12">
-                        <div className="flex flex-col gap-4">
-                            <h4 className="text-lg text-white font-mono uppercase tracking-widest">Lifestyle</h4>
-                            <div className="relative aspect-[4/3] bg-zinc-950 border border-zinc-900 overflow-hidden group">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10" />
-                                <div className="absolute bottom-6 left-6 z-20 flex flex-col gap-1">
-                                    <span className="text-white text-xl font-medium">Motorcycle Adventure</span>
-                                    <span className="text-zinc-500 text-xs font-mono uppercase">Freedom / Speed / Focus</span>
-                                </div>
-                                {/* Placeholder for moto photo - styled as a premium frame */}
-                                <div className="w-full h-full flex items-center justify-center text-zinc-800 font-mono text-[10px] tracking-[0.5em] grayscale opacity-50 group-hover:opacity-100 transition-opacity">
-                                    MOTO_CULTURE_FRAME
-                                </div>
-                            </div>
-                            <p className="text-zinc-500 text-sm font-light leading-relaxed">
-                                Мотоциклы — это не просто хобби, это метод тренировки фокуса и управления скоростью. Тот же принцип я переношу в разработку и бизнес.
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

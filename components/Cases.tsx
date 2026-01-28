@@ -18,6 +18,13 @@ export function Cases() {
     const [activeTab, setActiveTab] = useState<Category>('all');
     const [selectedCase, setSelectedCase] = useState<Case | null>(null);
 
+    const [selectedMedia, setSelectedMedia] = useState<number>(0);
+
+    // Reset media selection when opening a new case
+    useEffect(() => {
+        if (selectedCase) setSelectedMedia(0);
+    }, [selectedCase]);
+
     const filteredCases = activeTab === 'all'
         ? cases
         : cases.filter(c => c.category === activeTab);
@@ -31,6 +38,8 @@ export function Cases() {
         }
         return () => { document.body.style.overflow = 'unset'; };
     }, [selectedCase]);
+
+    const currentMediaUrl = selectedCase?.media?.[selectedMedia]?.url || selectedCase?.videoUrl;
 
     return (
         <section className="w-full bg-black py-24 md:py-32 px-6 md:px-12 flex flex-col items-center overflow-hidden">
@@ -136,9 +145,10 @@ export function Cases() {
                         >
                             {/* Video / Media Side */}
                             <div className="w-full md:w-[60%] lg:w-[65%] bg-black h-[300px] md:h-full relative overflow-hidden flex items-center justify-center">
-                                {selectedCase.videoUrl ? (
+                                {currentMediaUrl ? (
                                     <iframe
-                                        src={selectedCase.videoUrl}
+                                        key={currentMediaUrl}
+                                        src={currentMediaUrl}
                                         className="w-full h-full"
                                         frameBorder="0"
                                         allow="clipboard-write; autoplay"
@@ -146,7 +156,25 @@ export function Cases() {
                                     ></iframe>
                                 ) : (
                                     <div className="text-zinc-800 font-mono text-xs tracking-widest uppercase">
-                                        Demo video coming soon
+                                        Demo media coming soon
+                                    </div>
+                                )}
+
+                                {/* Media Switcher */}
+                                {selectedCase.media && selectedCase.media.length > 1 && (
+                                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-black/50 p-2 rounded-lg backdrop-blur-md border border-white/10">
+                                        {selectedCase.media.map((m, idx) => (
+                                            <button
+                                                key={idx}
+                                                onClick={() => setSelectedMedia(idx)}
+                                                className={`px-3 py-1 text-[10px] font-mono uppercase tracking-widest rounded-sm border transition-all ${selectedMedia === idx
+                                                    ? 'bg-white text-black border-white'
+                                                    : 'text-zinc-400 border-zinc-700 hover:border-zinc-500'
+                                                    }`}
+                                            >
+                                                {m.label || `Media ${idx + 1}`}
+                                            </button>
+                                        ))}
                                     </div>
                                 )}
 
@@ -188,7 +216,7 @@ export function Cases() {
                                     <div className="h-px w-12 bg-zinc-800" />
 
                                     <div className="flex flex-col gap-4">
-                                        <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-light">
+                                        <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-light whitespace-pre-line">
                                             {selectedCase.fullDesc || selectedCase.desc}
                                         </p>
                                     </div>
