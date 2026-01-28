@@ -5,6 +5,7 @@ import { Media } from '@/components/Media';
 import { Marketing } from '@/components/ContentSections';
 import { Values } from '@/components/Values';
 import { Lifestyle } from '@/components/Lifestyle';
+import { AiAssistant } from '@/components/AiAssistant';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Marketing />
       <Values />
       <Lifestyle />
+      <AiAssistant />
     </main>
   );
 }
