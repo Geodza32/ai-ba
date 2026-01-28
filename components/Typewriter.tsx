@@ -31,7 +31,7 @@ export function Typewriter({ text, delay = 0, speed = 0.03, className = "" }: Ty
             {displayText}
             <motion.span
                 animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 0.8, repeat: Infinity, ease: "steps(2)" }}
+                transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
                 className="inline-block w-[0.1em] md:w-[2px] h-[1em] bg-white translate-y-[0.1em] ml-[2px] shadow-[0_0_8px_rgba(255,255,255,0.8)]"
             />
         </span>
