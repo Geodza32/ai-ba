@@ -161,8 +161,13 @@ function BlockCard({ block, index }: { block: typeof scheduleBlocks[0]; index: n
 
                                         <div className="flex-1 flex flex-col gap-3">
                                             <h4 className="text-white text-base font-medium">{event.title}</h4>
+                                            {event.description && (
+                                                <p className="text-zinc-400 text-sm font-light leading-relaxed">
+                                                    {event.description}
+                                                </p>
+                                            )}
                                             {event.points && event.points.length > 0 && (
-                                                <ul className="flex flex-col gap-1.5">
+                                                <ul className="flex flex-col gap-1.5 pt-1">
                                                     {event.points.map((point, j) => (
                                                         <li key={j} className="text-zinc-500 text-sm flex items-start gap-2.5">
                                                             <span className="w-1 h-1 bg-zinc-700 rounded-full mt-1.5 shrink-0" />

@@ -5,6 +5,7 @@ export interface ScheduleEvent {
     time: string;
     type: EventType;
     title: string;
+    description?: string;
     points?: string[];
 }
 
@@ -20,7 +21,7 @@ export const COURSE_START_DATE = '2026-04-15T11:00:00+03:00';
 export const scheduleBlocks: ScheduleBlock[] = [
     {
         id: 0,
-        title: "Блок 1. База и Архитектура",
+        title: "Блок 1. Цикл разработки и Первые продукты",
         subtitle: "От рутины к автопилоту",
         events: [
             {
@@ -28,6 +29,7 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 time: "19:00 – 21:00",
                 type: "call",
                 title: "Введение и Быстрый старт",
+                description: "От рутины к автопилоту. Знакомство со средой (Antigravity). Создаем первые функциональные микро-проекты и ИИ-ботов уже на первом занятии.",
                 points: [
                     "Знакомство со средой разработки (Antigravity)",
                     "Создаем первые функциональные микро-проекты",
@@ -39,6 +41,7 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 time: "19:00 – 21:00",
                 type: "call",
                 title: "Логика и Архитектура AI-проектов",
+                description: "Фундамент: как правильно структурировать код, ставить ТЗ нейросетям и понимать полный цикл разработки (от идеи до деплоя).",
                 points: [
                     "Как правильно структурировать код",
                     "Написание ТЗ нейросетям",
@@ -50,6 +53,7 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 time: "11:00 – 13:00",
                 type: "workshop",
                 title: "Context Engineering",
+                description: "Тонкая настройка: учимся управлять токенами, предотвращать галлюцинации и использовать системные промпты для предсказуемого поведения ИИ.",
                 points: [
                     "Управляем токенами и контекстом",
                     "Системные промпты для предсказуемого поведения",
@@ -61,6 +65,7 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 time: "19:00 – 21:00",
                 type: "call",
                 title: "Мультиагентные системы",
+                description: "Делегирование рою агентов (один пишет код, второй тестирует). Глубокое погружение в Claude Code, MCP и создание навыков через Skill Creator.",
                 points: [
                     "Глубокое погружение в Claude Code",
                     "Работа с MCP (Model Context Protocol)",
@@ -71,14 +76,15 @@ export const scheduleBlocks: ScheduleBlock[] = [
     },
     {
         id: 1,
-        title: "Блок 2. B2B Продукты",
-        subtitle: "Омниканальность и Интеграции",
+        title: "Блок 2. Продукты для бизнеса и Многоканальность",
+        subtitle: "B2B/B2C сегмент",
         events: [
             {
                 date: "Пятница, 24 апреля",
                 time: "19:00 – 21:00",
                 type: "call",
-                title: "Web-приложения MVP",
+                title: "Web-приложения и Автоматизация",
+                description: "Вывод полноценных сайтов и MVP на рынок. Генерация клиентского кода, UI/UX и сборка backend-логики «под ключ».",
                 points: [
                     "Full-stack сборка логики 'под ключ'",
                     "Генерация клиентского кода и UI/UX",
@@ -89,7 +95,8 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 date: "Воскресенье, 26 апреля",
                 time: "11:00 – 13:00",
                 type: "workshop",
-                title: "Внутренние интерфейсы (CRM/ERP)",
+                title: "Внутренние интерфейсы (CRM, ERP)",
+                description: "Программирование решений для бизнеса: автоматизация скучных финотчетов, сборка презентаций, аналитические дашборды.",
                 points: [
                     "Автоматизация скучных бизнес-отчетов",
                     "Сборка презентаций через агентов",
@@ -100,7 +107,8 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 date: "Среда, 29 апреля",
                 time: "19:00 – 21:00",
                 type: "call",
-                title: "Омниканальность",
+                title: "Омниканальность и Интеграции",
+                description: "Вывод умных агентов в любые каналы: Telegram, Mini-Apps, SMS, сайты и голосовые Voice/Mac-интерфейсы.",
                 points: [
                     "Вывод агентов в Telegram",
                     "Освоение Mini-Apps и SMS рассылок",
@@ -112,6 +120,7 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 time: "19:00 – 21:00",
                 type: "call",
                 title: "RAG и Базы данных",
+                description: "Внедрение «памяти» для ИИ. Обучаем нейросеть регламентам вашей компании, истории клиентов и специфике бизнеса через векторные БД и Postgres.",
                 points: [
                     "Внедрение 'памяти' для ИИ (векторные БД)",
                     "Обучаем нейросеть регламентам вашей компании",
@@ -122,14 +131,15 @@ export const scheduleBlocks: ScheduleBlock[] = [
     },
     {
         id: 2,
-        title: "Блок 3. Автономные продажи",
-        subtitle: "OSINT и Оркестрация",
+        title: "Блок 3. Лидогенерация, OSINT и Оркестрация",
+        subtitle: "Автономные продажи",
         events: [
             {
                 date: "Воскресенье, 3 мая",
                 time: "11:00 – 13:00",
                 type: "workshop",
                 title: "Умные агенты для Продаж",
+                description: "Создание ботов-продажников, автоматическая квалификация лидов 24/7 и интеграция ИИ-воронок в ваши бизнес-процессы.",
                 points: [
                     "Создание ботов-продажников",
                     "Интеграция ИИ-воронок в процессы",
@@ -141,6 +151,7 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 time: "19:00 – 21:00",
                 type: "call",
                 title: "OSINT и Сбор данных",
+                description: "Онлайн-разведка, парсинг рынков, мониторинг конкурентов и автоматическая обработка огромных массивов информации (Python, Pandas).",
                 points: [
                     "Сбор датасетов, парсинг рынков",
                     "Автоматическая обработка массивов информации",
@@ -151,7 +162,8 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 date: "Пятница, 8 мая",
                 time: "19:00 – 21:00",
                 type: "call",
-                title: "Сложные Workflow",
+                title: "Оркестрация и Сложные Workflow",
+                description: "ИИ-отделы, многоуровневые цепочки принятия решений и «самоисцеляющийся» код (Self-Healing Code) без участия человека.",
                 points: [
                     "Построение автономных ИИ-отделов",
                     "Self-Healing Code без участия человека",
@@ -163,6 +175,7 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 time: "11:00 – 13:00",
                 type: "workshop",
                 title: "Безопасность и AI-Аудит",
+                description: "Изоляция окружения, защита клиентских данных и API-ключей (.env.keys). Внедрение Git для безопасного контроля версий.",
                 points: [
                     "Изоляция окружения для безопасности",
                     "Защита ключей (.env.keys) и клиентов",
@@ -173,7 +186,7 @@ export const scheduleBlocks: ScheduleBlock[] = [
     },
     {
         id: 3,
-        title: "Блок 4. Enterprise",
+        title: "Блок 4. Оптимизация, Enterprise и Production",
         subtitle: "Масштаб и Монетизация",
         events: [
             {
@@ -181,6 +194,7 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 time: "19:00 – 21:00",
                 type: "call",
                 title: "Автотестирование",
+                description: "100% покрытие кода тестами (Unit, e2e) силами ИИ. Гарантия качества продукта перед запуском в бизнес.",
                 points: [
                     "100% покрытие кода тестами (Unit, e2e)",
                     "Написание интеграционных тестов силами ИИ",
@@ -191,7 +205,8 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 date: "Пятница, 15 мая",
                 time: "19:00 – 21:00",
                 type: "call",
-                title: "Нагрузки и Архитектура",
+                title: "Нагрузки и Enterprise-архитектура",
+                description: "Подготовка продукта к тысячам пользователей. ИИ-профилирование, Serverless, устранение узких мест (Performance).",
                 points: [
                     "ИИ-профилирование и устранение багов (Performance)",
                     "Serverless технологии",
@@ -203,6 +218,7 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 time: "11:00 – 13:00",
                 type: "workshop",
                 title: "Бесшовный Деплой (CI/CD)",
+                description: "Вывод продукта в Production. Контейнеризация (Docker), облачные серверы (Vercel/AWS) и обновление проектов без остановки продаж.",
                 points: [
                     "Вывод продукта в стабильный Production",
                     "Облачные серверы (Vercel/AWS)",
@@ -213,7 +229,8 @@ export const scheduleBlocks: ScheduleBlock[] = [
                 date: "Среда, 20 мая",
                 time: "19:00 – 21:00",
                 type: "call",
-                title: "Roadmap Монетизации",
+                title: "Roadmap монетизации",
+                description: "Итоговый Code-Review. Пошаговые стратегии вывода ваших автономных сервисов на рынок и монетизация новых навыков.",
                 points: [
                     "Итоговый AI Code-Review",
                     "Стратегии вывода автономных сервисов на рынок",
