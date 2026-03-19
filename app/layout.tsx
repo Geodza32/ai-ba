@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import dynamic from "next/dynamic";
 
-const AiAssistant = dynamic(() => import("@/components/AiAssistant").then(mod => mod.AiAssistant), {
-  ssr: false,
-});
+
+import { AiAssistant } from "@/components/AiAssistant";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

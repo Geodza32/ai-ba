@@ -7,28 +7,28 @@ import { Typewriter } from './Typewriter';
 const services = [
     {
         id: 1,
-        title: "Кастомная AI-разработка",
-        desc: "Боты, платформы, приложения, сайты, парсеры и любые веб-ресурсы под ваши задачи."
+        title: "AI-продукты & Web-разработка",
+        desc: "Сайты, порталы, MVP-сервисы и Landing-страницы, полностью собранные через ИИ-агентов."
     },
     {
         id: 2,
-        title: "AI-автоматизация",
-        desc: "Полная перестройка бизнес-процессов: от привлечения трафика до управления."
+        title: "Внутренние системы (CRM/ERP)",
+        desc: "Автоматизация отчетности, сборки презентаций, базы данных (RAG) и аналитические дашборды."
     },
     {
         id: 3,
-        title: "Обучение вайбкодингу",
-        desc: "Учу предпринимателей и команды управлять разработкой через нейросети."
+        title: "Автоворонки и Умные Агенты",
+        desc: "Сбор данных (OSINT), ИИ-боты для продаж в Telegram, генерация лидов и омниканальность."
     }
 ];
 
 const steps = [
-    { num: "01", title: "Исследование", items: ["CustDev", "AI-разведка", "Анализ конкурентов"] },
-    { num: "02", title: "Экономика", items: ["Юнит-экономика", "Финмодель", "Моделирование"] },
-    { num: "03", title: "Продукт", items: ["MVP", "HADI-циклы", "Гипотезы"] },
-    { num: "04", title: "Маркетинг", items: ["Стратегия", "Каналы", "Трафик"] },
-    { num: "05", title: "Продажи", items: ["Воронки", "Скрипты", "CRM"] },
-    { num: "06", title: "Запуск & Рост", items: ["Операционка", "Команда", "Масштабирование"] }
+    { num: "01", title: "Фундамент", items: ["Цикл разработки", "Архитектура", "ТЗ агентам"] },
+    { num: "02", title: "Сборка (Build)", items: ["Claude Code", "MCP", "Написание логики"] },
+    { num: "03", title: "AI-Сотрудники", items: ["Телеграм-боты", "Голосовые ИИ", "Self-Healing код"] },
+    { num: "04", title: "Аналитика", items: ["OSINT", "Python Скрипты", "Парсеры"] },
+    { num: "05", title: "Тестирование", items: ["Unit/e2e тесты", "AI-Аудит безопасности", "Git"] },
+    { num: "06", title: "Enterprise", items: ["CI/CD Деплой", "Docker", "Масштабирование"] }
 ];
 
 export function Overview() {
@@ -40,7 +40,7 @@ export function Overview() {
                 <div className="max-w-4xl text-left">
                     <p className="text-[clamp(1.125rem,2.5vw,1.5rem)] text-zinc-400 font-light leading-relaxed">
                         <Typewriter
-                            text="Создаю фундамент и системы, которые позволяют компаниям расти в эпоху AI. Мой фокус на ближайшие 2 года — архитектура, которая превращает идеи в прибыльные активы."
+                            text="Я учу людей воплощать любые идеи без барьеров сложного кодинга. Вы научитесь строить всё: от простых ботов до полноценных Web-приложений, CRM-систем, инструментов онлайн-разведки (OSINT) и автоворонок."
                             delay={0.2}
                             speed={0.02}
                         />
@@ -60,7 +60,7 @@ export function Overview() {
                         >
                             <div className="h-px w-full bg-zinc-800 group-hover:bg-white transition-colors duration-500" />
                             <div className="flex flex-col gap-2">
-                                <span className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest">Service 0{service.id}</span>
+                                <span className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest">Ability 0{service.id}</span>
                                 <h3 className="text-xl md:text-2xl text-white font-medium">
                                     <Typewriter text={service.title} delay={0.5 + i * 0.2} speed={0.05} />
                                 </h3>
@@ -75,9 +75,9 @@ export function Overview() {
                 {/* Business Architecture Cycle */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-zinc-900 pb-8">
                     <h2 className="text-3xl md:text-5xl text-white font-semibold flex items-center gap-4 leading-[1.2]">
-                        <Typewriter text="ЦИКЛ АРХИТЕКТУРЫ" speed={0.05} />
+                        <Typewriter text="ЦИКЛ РАЗРАБОТКИ" speed={0.05} />
                     </h2>
-                    <span className="text-[10px] text-zinc-500 font-mono uppercase tracking-[0.3em] mb-2">Full Cycle Ecosystem</span>
+                    <span className="text-[10px] text-zinc-500 font-mono uppercase tracking-[0.3em] mb-2">Development Cycle</span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
@@ -93,7 +93,7 @@ export function Overview() {
                             <span className="text-2xl text-zinc-800 font-mono mb-1">
                                 {step.num}
                             </span>
-                            <h4 className="text-lg text-white font-mediumLeading-relaxed">{step.title}</h4>
+                            <h4 className="text-lg text-white font-medium leading-relaxed">{step.title}</h4>
                             <ul className="flex flex-wrap gap-x-3 gap-y-1">
                                 {step.items.map((item, idx) => (
                                     <li key={idx} className="text-zinc-500 text-xs md:text-sm flex items-center gap-2">
@@ -115,27 +115,24 @@ export function Overview() {
                 >
                     <div className="flex flex-col gap-4">
                         <h3 className="text-xl md:text-2xl text-white font-medium leading-tight">
-                            <Typewriter text="AI-автоматизация «под ключ»" speed={0.05} />
+                            <Typewriter text="От идеи до Production за 16 уроков" speed={0.05} />
                         </h3>
                         <p className="text-zinc-400 max-w-2xl leading-relaxed text-sm md:text-base">
-                            Мы не просто внедряем один инструмент. Мы поэтапно переводим каждый департамент
-                            на рельсы AI. Это тиражированный продукт на уровне кастомной разработки.
+                            Мы изучаем полный цикл разработки. К пятому занятию вы уже создадите десяток миницифровых продуктов: от парсеров конкурентов до полноценных AI-менеджеров по продажам в вашем Telegram.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-zinc-900 pt-8">
                         <div className="flex flex-col gap-2">
-                            <span className="text-white text-base font-medium">Бесконечный апгрейд</span>
+                            <span className="text-white text-base font-medium">Бесконечные возможности</span>
                             <p className="text-zinc-500 text-xs md:text-sm leading-relaxed">
-                                То, что сегодня автоматизировано частично, через 6 месяцев мы
-                                переведем на 100% за счет новых моделей.
+                                Любой бизнес-запрос: CRM, SMS, дашборды, OSINT-разведка — вы не пишите код сами, вы делегируете архитектуру автономным агентам.
                             </p>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <span className="text-white text-base font-medium">Модель партнерства</span>
+                            <span className="text-white text-base font-medium">Монетизация & Enterprise</span>
                             <p className="text-zinc-500 text-xs md:text-sm leading-relaxed">
-                                Подписка на стабильность и рост. Мы следим за миром AI и
-                                сразу внедряем лучшие технологии в ваш контур.
+                                Подготавливаем решения для любых нагрузок. Docker, CI/CD деплой, Serverless — всё, чтобы ваш стартап или заказчик получили стабильный сервис.
                             </p>
                         </div>
                     </div>
